@@ -36,19 +36,23 @@ h6 {
     font-weight: 700;
 }
 
+hr
+{
+    color: #3676ab;
+}
+
 hr.star-light,
 hr.star-primary {
     margin: 25px auto 30px;
     padding: 0;
     max-width: 250px;
     border: 0;
-    border-top: solid 5px;
+    border-top: solid 3px;
     text-align: center;
 }
 
 hr.star-light:after,
 hr.star-primary:after {
-    content: "\f005";
     display: inline-block;
     position: relative;
     top: -.8em;
@@ -58,20 +62,20 @@ hr.star-primary:after {
 }
 
 hr.star-light {
-    border-color: #fff;
+    border-color: #3676ab;
 }
 
 hr.star-light:after {
-    color: #fff;
-    background-color: #18bc9c;
+    color: #3676ab;
+    background-color: #fffff;
 }
 
 hr.star-primary {
-    border-color: #2c3e50;
+    border-color: #3676ab;
 }
 
 hr.star-primary:after {
-    color: #2c3e50;
+    color: #3676ab;
     background-color: #fff;
 }
 
@@ -81,8 +85,8 @@ hr.star-primary:after {
 
 header {
     text-align: center;
-    color: #fff;
-    background: #18bc9c;
+    color: #3676ab;
+    background: #fffff;
 }
 
 header .container {
@@ -166,6 +170,8 @@ header .intro-text .skills {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     height: 45px;
+    background-color: #ffca39;
+    color: #3676ab;
 }
 
 .navbar a:focus {
@@ -192,11 +198,12 @@ section {
 section h2 {
     margin: 0;
     font-size: 3em;
+    color: #3676ab;
 }
 
 section.success {
-    color: #fff;
-    background: #18bc9c;
+    color: #3676ab;
+    background: #fffff;
 }
 
 section.success a,
@@ -218,19 +225,19 @@ section.success a.active {
     }
 }
 
-#portfolio .portfolio-item {
+#speakers .speakers-item {
     right: 0;
     margin: 0 0 15px;
 }
 
-#portfolio .portfolio-item .portfolio-link {
+#speakers .speakers-item .speakers-link {
     display: block;
     position: relative;
     margin: 0 auto;
     max-width: 400px;
 }
 
-#portfolio .portfolio-item .portfolio-link .caption {
+#speakers .speakers-item .speakers-link .caption {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -241,11 +248,11 @@ section.success a.active {
     transition: all ease .5s;
 }
 
-#portfolio .portfolio-item .portfolio-link .caption:hover {
+#speakers .speakers-item .speakers-link .caption:hover {
     opacity: 1;
 }
 
-#portfolio .portfolio-item .portfolio-link .caption .caption-content {
+#speakers .speakers-item .speakers-link .caption .caption-content {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -256,21 +263,21 @@ section.success a.active {
     color: #fff;
 }
 
-#portfolio .portfolio-item .portfolio-link .caption .caption-content i {
+#speakers .speakers-item .speakers-link .caption .caption-content i {
     margin-top: -12px;
 }
 
-#portfolio .portfolio-item .portfolio-link .caption .caption-content h3,
-#portfolio .portfolio-item .portfolio-link .caption .caption-content h4 {
+#speakers .speakers-item .speakers-link .caption .caption-content h3,
+#speakers .speakers-item .speakers-link .caption .caption-content h4 {
     margin: 0;
 }
 
-#portfolio * {
+#speakers * {
     z-index: 2;
 }
 
 @media(min-width:767px) {
-    #portfolio .portfolio-item {
+    #speakers .speakers-item {
         margin: 0 0 30px;
     }
 }
@@ -409,7 +416,7 @@ footer .footer-below {
     outline: 0;
 }
 
-.portfolio-modal .modal-content {
+.speakers-modal .modal-content {
     padding: 100px 0;
     min-height: 100%;
     border: 0;
@@ -420,20 +427,20 @@ footer .footer-below {
     box-shadow: none;
 }
 
-.portfolio-modal .modal-content h2 {
+.speakers-modal .modal-content h2 {
     margin: 0;
     font-size: 3em;
 }
 
-.portfolio-modal .modal-content img {
+.speakers-modal .modal-content img {
     margin-bottom: 30px;
 }
 
-.portfolio-modal .modal-content .item-details {
+.speakers-modal .modal-content .item-details {
     margin: 30px 0;
 }
 
-.portfolio-modal .close-modal {
+.speakers-modal .close-modal {
     position: absolute;
     top: 25px;
     right: 25px;
@@ -443,11 +450,11 @@ footer .footer-below {
     cursor: pointer;
 }
 
-.portfolio-modal .close-modal:hover {
+.speakers-modal .close-modal:hover {
     opacity: .3;
 }
 
-.portfolio-modal .close-modal .lr {
+.speakers-modal .close-modal .lr {
     z-index: 1051;
     width: 1px;
     height: 75px;
@@ -458,7 +465,7 @@ footer .footer-below {
     transform: rotate(45deg);
 }
 
-.portfolio-modal .close-modal .lr .rl {
+.speakers-modal .close-modal .lr .rl {
     z-index: 1052;
     width: 1px;
     height: 75px;
@@ -468,7 +475,7 @@ footer .footer-below {
     transform: rotate(90deg);
 }
 
-.portfolio-modal .modal-backdrop {
+.speakers-modal .modal-backdrop {
     display: none;
     opacity: 0;
 }
