@@ -12,3 +12,17 @@ from django.contrib.auth.decorators import login_required
 
 def home(request):
     return render_to_response('base.html')
+    
+
+def contact(request):
+    context = {}
+    if request.method == "POST":
+        sender_name = request.POST['name']
+        sender_email = request.POST['email']
+        query = request.POST['message']
+            to = ('scipy@fossee.in',)
+            subject = "Query from - "+sender_name
+            message = form['message']
+            send_mail(subject, message, sender_email, to, fail_silently=True)
+            context['mailsent'] = True
+            return render(request, 'base.html', context)
