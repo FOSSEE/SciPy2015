@@ -20,9 +20,9 @@ def contact(request):
         sender_name = request.POST['name']
         sender_email = request.POST['email']
         query = request.POST['message']
-            to = ('scipy@fossee.in',)
-            subject = "Query from - "+sender_name
-            message = form['message']
-            send_mail(subject, message, sender_email, to, fail_silently=True)
-            context['mailsent'] = True
-            return render(request, 'base.html', context)
+        to = ('scipy@fossee.in',)
+        subject = "Query from - "+sender_name
+        message = form['message']
+        send_mail(subject, message, sender_email, to, fail_silently=True)
+        context['mailsent'] = True
+        return render(request, 'base.html', context)
