@@ -28,11 +28,10 @@ def contact(request):
         sender_name = request.POST['name']
         sender_email = request.POST['email']
         query = request.POST['message']
-        to = ('hardythe1@gmail.com',)
+        to = ('scipy@fossee.in',)
         subject = "Query from - "+sender_name
         message = request.POST['message']
         send_mail(subject, message, sender_email, to, fail_silently=True)
-        context['mailsent'] = True
         return HttpResponseRedirect('/?query=sent')
     else:
         return HttpResponseRedirect('/')
