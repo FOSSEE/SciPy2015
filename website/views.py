@@ -32,6 +32,6 @@ def contact(request):
         subject = "Query from - "+sender_name
         message = request.POST['message']
         send_mail(subject, message, sender_email, to, fail_silently=True)
-        return HttpResponseRedirect('/?query=sent')
+        return HttpResponseRedirect('/2015/?query=sent')
     else:
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/2015')
