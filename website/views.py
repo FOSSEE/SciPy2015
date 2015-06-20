@@ -12,24 +12,27 @@ from django.core.mail import send_mail
 
 
 def home(request):
-    return render_to_response('down.html')
+    context = {}
+    if 'query' in request.GET:
+        context['query'] = True
+    context.update(csrf(request))
     if request.method == "POST":
         return HttpResponse("Working")
-    return render_to_response('base.html')
+    return render_to_response('base.html', context)
     
 
 def contact(request):
     context = {}
-    return HttpResponse("Reached Here")
+    context.update(csrf(request))
     if request.method == "POST":
         sender_name = request.POST['name']
         sender_email = request.POST['email']
         query = request.POST['message']
-        to = ('scipy@fossee.in',)
+        to = ('hardythe1@gmail.com',)
         subject = "Query from - "+sender_name
-        message = form['message']
+        message = request.POST['message']
         send_mail(subject, message, sender_email, to, fail_silently=True)
         context['mailsent'] = True
-        return render(request, 'base.html', context)
+        return HttpResponseRedirect('/?query=sent')
     else:
         return HttpResponseRedirect('/')
