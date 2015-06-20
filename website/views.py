@@ -13,16 +13,6 @@ from django.core.mail import send_mail
 
 def home(request):
     context = {}
-    if 'query' in request.GET:
-        context['query'] = True
-    context.update(csrf(request))
-    if request.method == "POST":
-        return HttpResponse("Working")
-    return render_to_response('base.html', context)
-    
-
-def contact(request):
-    context = {}
     context.update(csrf(request))
     if request.method == "POST":
         sender_name = request.POST['name']
@@ -31,7 +21,10 @@ def contact(request):
         to = ('scipy@fossee.in',)
         subject = "Query from - "+sender_name
         message = request.POST['message']
-        send_mail(subject, message, sender_email, to, fail_silently=True)
-        return HttpResponseRedirect('/2015/?query=sent')
-    else:
-        return HttpResponseRedirect('/2015')
+        try:
+            send_mail(subject, message, sender_email, to)
+            context['mailsent'] = True
+        except:
+            context['mailfailed'] = True
+        return render_to_response('base.html', context)
+    return render_to_response('base.html', context)
