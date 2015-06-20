@@ -26,5 +26,4 @@ def home(request):
             context['mailsent'] = True
         except:
             context['mailfailed'] = True
-        return render_to_response('base.html', context)
     return render_to_response('base.html', context)
