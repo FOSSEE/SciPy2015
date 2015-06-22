@@ -330,7 +330,8 @@ img {
 }
 .img-circle {
   border-radius: 50%;
-  width: 220px;
+  width: 210px;
+  height:250px;
 }
 hr {
   margin-top: 20px;
