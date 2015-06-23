@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.utils.encoding import force_text
 from django.contrib.contenttypes.models import ContentType
+from django.template.context import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, redirect
 from django.views.decorators.csrf import csrf_exempt
@@ -27,3 +28,10 @@ def home(request):
         except:
             context['mailfailed'] = True
     return render_to_response('base.html', context)
+
+
+def cfp(request):
+    context = RequestContext(request, {'request': request,
+                                       'user': request.user})
+    return render_to_response('cfp.html',
+                             context_instance=context)

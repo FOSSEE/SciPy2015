@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{%  block navbar %}
+<div id="navbar-main"> 
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="{% url 'website:home' %}">SciPy India 2015 </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{% url 'website:home' %}">Home</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<!-- ==== CONTACT ==== -->
+<div id="contact" name="contact">
+  <div class="container">
+    <div class="row">
+        <div>
+             <h1>Third-party authentication demo</h1>
+             <p>
+               <ul>
+               {% if user and not user.is_anonymous %}
+                 <li>
+                   <a>Hello {{ user.get_full_name|default:user.username }}!</a>
+                 </li>
+                 <li>
+                   <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
+                 </li>
+               {% else %}
+                 <li>
+                   <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
+                 </li>
+                 <li>
+                   <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a>
+                 </li>
+                 <li>
+                   <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Login with Twitter</a>
+                 </li>
+               {% endif %}
+               </ul>
+             </p>
+         </div>
+    </div> 
+  </div>
+</div>
+<!-- container -->
+{% endblock %}
