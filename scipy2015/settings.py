@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from loacl import *
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -94,8 +95,8 @@ DATABASES = {
     }
 }
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '435463679202-ec0cuk2jbnhactnad44fuodoftl6rjbp.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'vdeG2MFpC0fgIZqDUjqX1ncK'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = LOCAL_SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = LOCAL_SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
