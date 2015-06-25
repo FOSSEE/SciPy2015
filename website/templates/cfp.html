@@ -12,7 +12,14 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="{% url 'website:home' %}">Home</a></li>
+           <li><a href="{% url 'website:home' %}">Home</a></li>
+           {% if user and not user.is_anonymous %}
+               <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.get_full_name|default:user.username }}<b class="caret"></b></a>
+               <ul class="dropdown-menu">
+                   <li><a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a></li>
+               </ul>           
+           {% endif %}
         </ul>
       </div>
       <!--/.nav-collapse --> 
@@ -22,38 +29,36 @@
 {% endblock %}
 
 {% block content %}
-
-<!-- ==== CONTACT ==== -->
-<div id="contact" name="contact">
+<div id="about" name="about">
   <div class="container">
-    <div class="row">
-        <div>
-             <h1>Third-party authentication demo</h1>
-             <p>
-               <ul>
-               {% if user and not user.is_anonymous %}
-                 <li>
-                   <a>Hello {{ user.get_full_name|default:user.username }}!</a>
-                 </li>
-                 <li>
-                   <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
-                 </li>
-               {% else %}
-                 <li>
-                   <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
-                 </li>
-                 <li>
-                   <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a>
-                 </li>
-                 <li>
-                   <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Login with Twitter</a>
-                 </li>
-               {% endif %}
-               </ul>
-             </p>
-         </div>
-    </div> 
+    <div class="row white">
+      <h2 class="centered">Call for Proposals</h2>
+      <hr>
+      <div class="col-md-6">
+        <p align="justify">We look forward to your proposals. Conference aims to promote <strong>Python for Scientific Computing and Education</strong>. Topics like pedagogy, exploration, modeling or from both applied and developmental perspectives are welcome. Contributions from academia as well as industry are welcome. If you wish to propose a talk at the conference, kindly follow the guidelines given below.</p>
+        <hr>
+        <h3><u>Proposal Guidelines</u></h3>
+        <ul>
+            <li>Submit a proposal through <a href="#">this link</a>
+            <li>The project you are willing to present should be an actual implementation rather than just an idea.
+            <li>Abstract should be of 300 to 700 words describing the topic, including its relevance to scientific computing.
+            <li>Proposals with an aim to promote a commercial product or service will be rejected.
+            <li>In your abstract mention about various tools/libraries used for development.
+            <li>Notification for selection/rejection of your proposal will be given through email.
+            <li>All selected proposals must be presented at the conference by at least one author.
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3><u>Important Dates</u></h3>
+        <ul>
+            <li>CFP Open: July 1, 2015
+            <li>CFP Close: October 15, 2015
+            <li>Announcement of selected proposals: November 15, 2015
+        </ul>
+      </div>
+    </div>
+    <!-- row --> 
   </div>
 </div>
-<!-- container -->
+
 {% endblock %}
