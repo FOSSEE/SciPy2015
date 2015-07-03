@@ -33,6 +33,14 @@
   <div class="container">
     <div class="row white">
       <h2 class="centered">Call for Proposals</h2>
+      {% if login_required %}
+        <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <p>Thank You for submitting a Talk ! Your proposal has been saved successfully.</p>
+    </div>
+      {% endif %}
       <hr>
       <div class="col-md-6">
         <p align="justify">We look forward to your proposals. Conference aims to promote <strong>Python for Scientific Computing and Education</strong>. Topics like pedagogy, exploration, modeling or from both applied and developmental perspectives are welcome. Contributions from academia as well as industry are welcome. If you wish to propose a talk at the conference, kindly follow the guidelines given below.</p>
@@ -55,6 +63,14 @@
             <li>CFP Close: October 15, 2015
             <li>Announcement of selected proposals: November 15, 2015
         </ul>
+        <hr>
+        {% if user and not user.is_anonymous %}
+            <a href="{% url 'website:submitcfp' %}" class="btn btn btn-primary" type="submit">Submit a Talk</a>
+        {% else %}
+            To Submit a Talk Login with:
+            <p><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}" class="btn btn btn-primary">Google</a> or
+            <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="btn btn btn-primary">Facebook</a> or
+        {% endif %}
       </div>
     </div>
     <!-- row --> 
