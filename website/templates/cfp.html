@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{%  block navbar %}
+<div id="navbar-main"> 
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="{% url 'website:home' %}">SciPy India 2015 </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+           <li><a href="{% url 'website:home' %}">Home</a></li>
+           {% if user and not user.is_anonymous %}
+               <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.get_full_name|default:user.username }}<b class="caret"></b></a>
+               <ul class="dropdown-menu">
+                   <li><a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a></li>
+               </ul>           
+           {% endif %}
+        </ul>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="about" name="about">
+  <div class="container">
+    <div class="row white">
+      {% if proposal_submit %}
+        <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <p>Thank You for submitting a talk. Propsal has been saved successfully !</p>
+        </div>
+      {% endif %}
+      {% if login_required %}
+        <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <p>You need to login for submitting a talk !</p>
+        </div>
+      {% endif %}
+      <h2 class="centered">Call for Proposals</h2>
+      <hr>
+      <div class="col-md-6">
+        <p align="justify">We look forward to your proposals. Conference aims to promote <strong>Python for Scientific Computing and Education</strong>. Topics like pedagogy, exploration, modeling or from both applied and developmental perspectives are welcome. Contributions from academia as well as industry are welcome. If you wish to propose a talk at the conference, kindly follow the guidelines given below.</p>
+        <hr>
+        <h3><u>Proposal Guidelines</u></h3>
+        <ul>
+            <li>Submit a proposal through <a href="#">this link</a>
+            <li>The project you are willing to present should be an actual implementation rather than just an idea.
+            <li>Abstract should be of 300 to 700 words describing the topic, including its relevance to scientific computing.
+            <li>Proposals with an aim to promote a commercial product or service will be rejected.
+            <li>In your abstract mention about various tools/libraries used for development.
+            <li>Notification for selection/rejection of your proposal will be given through email.
+            <li>All selected proposals must be presented at the conference by at least one author.
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3><u>Important Dates</u></h3>
+        <ul>
+            <li>CFP Open: July 1, 2015
+            <li>CFP Close: October 15, 2015
+            <li>Announcement of selected proposals: November 15, 2015
+        </ul>
+        <hr>
+        {% if user and not user.is_anonymous %}
+            <a href="{% url 'website:submitcfp' %}" class="btn btn btn-primary" type="submit">Submit a Talk</a>
+        {% else %}
+            To Submit a Talk Login with:
+            <p><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}" class="btn btn btn-primary">Google</a> or
+            <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="btn btn btn-primary">Facebook</a>
+        {% endif %}
+      </div>
+    </div>
+    <!-- row --> 
+  </div>
+</div>
+
+{% endblock %}

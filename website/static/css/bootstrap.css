@@ -3038,7 +3038,8 @@ input[type="button"].btn-block {
   clear: both;
   font-weight: normal;
   line-height: 1.428571429;
-  color: #333;
+  color: #3676ab;
+  font-size: 15px;
   white-space: nowrap;
 }
 .dropdown-menu > li > a:hover,
@@ -4084,8 +4085,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-  color: #fff;
-  background-color: #080808;
+  color: #ffca39;
+  background-color: #3676ab;
 }
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
