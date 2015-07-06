@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {%  block navbar %}
 <div id="navbar-main"> 
@@ -72,7 +73,7 @@
         </ul>
         <hr>
         {% if user and not user.is_anonymous %}
-            <a href="{% url 'website:submitcfp' %}" class="btn btn btn-primary" type="submit">Submit a Talk</a>
+            <a href="{% url 'website:submitcfp' %}" class="btn btn btn-primary">Submit a Talk</a>
         {% else %}
             To Submit a Talk Login with:
             <p><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}" class="btn btn btn-primary">Google</a> or
