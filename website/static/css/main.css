@@ -244,20 +244,7 @@ a:before, a:after {
 	font-weight: bold;
 	text-shadow: 0px 20px 7px #3da8ae;
 }
-#headerwrap .btn {
-	font-weight: 500;
-	font-size: 20px;
-	margin: 50px 0;
-	background-color: #ffbf00;
-	color: #fff;
-	text-shadow: 0 0 4px #bf9004;
-	box-shadow: -5px -5px 20px #3da8ae;
-	border: 0;
-}
-#headerwrap .btn:hover, #headerwrap .btn:focus {
-	background-color: #e9af03;
-	outline: 0px;
-}
+
 #about {
 	background: #fff;
 	padding: 60px 0;
@@ -265,11 +252,13 @@ a:before, a:after {
 #about img {
 	margin-top: 65px;
 }
+
 #cfp {
 	background: #f5f5f5;
 	padding: 60px 0;
 	text-align: center;
-}http://www.jarrodmillman.com/
+}
+
 #cfp .fa {
 	color: #ffbf00;
 }
