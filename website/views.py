@@ -40,15 +40,6 @@ def cfp(request):
                                        'user': request.user})
     return render_to_response('cfp.html',
                              context_instance=context)
-                             
-
-def userlogout(request):
-    user = request.user
-    if user.is_authenticated:
-        logout(request)
-        return HttpResponseRedirect("/cfp")
-    else:
-        return HttpResponseRedirect("/cfp")
 
 
 def submitcfp(request):
