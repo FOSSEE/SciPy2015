@@ -35,19 +35,17 @@
       <h2 class="centered">Submit a Talk</h2>
       <hr>
     </div>
-    <div class="row">
       <div class="col-lg-8 col-lg-offset-2 centered">
-        <form id="contact" action="" class="form" role="form" method=POST enctype="multipart/form-data">
-          <div class="row">
+        <form id="contact" action="" method=POST enctype="multipart/form-data">
+          <div class="row1">
             {{ proposal_form.as_p }}
             {{ proposal_form.erros }}
           </div>
           {% csrf_token %}
-        <button class="btn btn btn-lg" type="submit">Submit</button>
+        <center><button class="btn btn btn-lg" type="submit">Submit</button></center>
         </form>
         <!-- form --> 
       </div>
-    </div>
     <!-- row --> 
   </div>
 </div>

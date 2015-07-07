@@ -287,6 +287,9 @@ textarea {
   font-size: inherit;
   line-height: inherit;
 }
+textarea {
+  height: 150px;
+}
 a {
   color: #428bca;
   text-decoration: none;
@@ -1651,6 +1654,8 @@ label {
   display: inline-block;
   margin-bottom: 5px;
   font-weight: bold;
+  float:left;
+  margin-right: -90px;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -1666,6 +1671,7 @@ input[type="checkbox"] {
 }
 input[type="file"] {
   display: block;
+  margin-left: 30%;
 }
 input[type="range"] {
   display: block;
