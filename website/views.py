@@ -58,9 +58,9 @@ def submitcfp(request):
                 context['proposal_submit'] = True
                 sender_name = "SciPy India 2015"
                 sender_email = "scipy@fossee.in"
-                subject = "Query from - "+sender_name
+                subject = "SciPy India - Proposal Acknowledgment"
                 to = (social_user.email, )
-                message = """Dear """+django_user.first_name+""",\n Thank you for showing interest & submitting a talk at SciPy India 2015 conference. We have received your proposal for the talk titled '"""+request.POST['title']+"""'. Reviewal of the proposals will start once the CFP closes. You will be notified regarding selection/rejection of your talk via email.\n\nThank You ! \n\nRegards,\nSciPy India 2015,\nFOSSEE - IIT Bombay"""
+                message = """Dear """+django_user.first_name+""",\n\nThank you for showing interest & submitting a talk at SciPy India 2015 conference. We have received your proposal for the talk titled <b>'"""+request.POST['title']+"""'</b>.\nReviewal of the proposals will start once the CFP closes.\nYou will be notified regarding selection/rejection of your talk via email.\n\nThank You ! \n\nRegards,\nSciPy India 2015,\nFOSSEE - IIT Bombay"""
                 send_mail(subject, message, sender_email, to)
                 return render_to_response('cfp.html', context)
             else:
