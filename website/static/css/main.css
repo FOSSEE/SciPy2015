@@ -565,3 +565,23 @@ body .header {
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
+
+.col-md-9 form span {
+    display: block;
+}
+
+.col-md-9 form input {
+    width: 350px;
+    margin-right: 150px;
+}
+
+.col-md-9 form label{
+    min-width: 175px;
+    text-align: right;
+}
+
+.col-md-9 form li {
+    font-size: 15px;
+    list-style-type: none;
+    color: red;
+}

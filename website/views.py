@@ -26,7 +26,7 @@ def userregister(request):
             form = UserRegisterForm(request.POST)
             if form.is_valid():
                 form.save()
-                return HttpResponseRedirect('/2015/accounts/login')
+                return HttpResponseRedirect('/2015/cfp')
             else:
                 context.update(csrf(request))
                 context['form'] = form
