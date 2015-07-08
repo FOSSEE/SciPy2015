@@ -90,13 +90,21 @@ WSGI_APPLICATION = 'scipy2015.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'scipy2015',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': DATABASE_USER,
+        'PASSWORD': DATABASE_PASSWORD,
+        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',
     }
 }
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = LOCAL_SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = LOCAL_SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
+
+SOCIAL_AUTH_FACEBOOK_KEY = LOCAL_SOCIAL_AUTH_FB_KEY
+SOCIAL_AUTH_FACEBOOK_SECRET = LOCAL_SOCIAL_AUTH_FB_SECRET
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -116,3 +124,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, '../website/static/uploads')
