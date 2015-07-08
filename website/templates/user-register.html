@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%  block navbar %}
+<div id="navbar-main"> 
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="{% url 'website:home' %}">SciPy India 2015 </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+           <li><a href="{% url 'website:home' %}">Home</a></li>
+           <li><a href="{% url 'website:userlogin' %}">Login</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="contact" name="contact">
+    <div class="container">
+        <div class="row white">
+          <h2 class="centered">Sign Up</h2>
+          <hr>
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-4">
+            <form action="" method="POST">
+                {{ form.as_p }}
+                <button class="btn btn btn-primary" type="submit">SignUp</button>
+                {% csrf_token %}
+            </form>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

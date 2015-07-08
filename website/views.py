@@ -13,9 +13,51 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 
 
-from website.forms import ProposalForm
+from website.forms import ProposalForm, UserRegisterForm, UserLoginForm
 from website.models import Proposal, Comments
 from social.apps.django_app.default.models import UserSocialAuth
+
+
+def userregister(request):
+    context = {}
+    context.update(csrf(request))
+    if request.user.is_anonymous():
+        if request.method == 'POST':
+            form = UserRegisterForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return HttpResponseRedirect('/accounts/login')
+            else:
+                context.update(csrf(request))
+                context['form'] = form
+                return render_to_response('user-register.html', context)
+        else:
+            form = UserRegisterForm()
+        context.update(csrf(request))
+        context['form'] = form
+        return render_to_response('user-register.html', context)
+    else:
+        context['user'] = request.user
+        return HttpResponseRedirect('/cfp')
+
+
+def userlogin(request):
+    context = {}
+    context.update(csrf(request))
+    if request.method == "POST":
+        form = UserLoginForm(request.POST)
+        if form.is_valid():
+            user = form.cleaned_data
+            login(request, user)
+            context['user'] = user
+            return render_to_response('cfp.html', context)
+        else:
+            context['form'] = form
+            return render_to_response('user-login.html', context)
+    else:
+        form = UserLoginForm()
+        context['form'] = form
+        return render_to_response('user-login.html', context)
 
 
 def home(request):
