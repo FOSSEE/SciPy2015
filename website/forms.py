@@ -40,11 +40,3 @@ class UserLoginForm(forms.Form):
 			widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}), 
 			label=''
 		)
-    def clean(self):
-        super(UserLoginForm, self).clean()
-        u_name, pwd = self.cleaned_data["username"],\
-                          self.cleaned_data["password"]
-        user = authenticate(username=u_name, password=pwd)
-        if not user:
-            raise forms.ValidationError("Invalid username/password")
-        return user

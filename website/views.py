@@ -45,14 +45,16 @@ def userlogin(request):
     context = {}
     context.update(csrf(request))
     if request.method == "POST":
-        form = UserLoginForm(request.POST)
-        if form.is_valid():
-            user = form.cleaned_data
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
             login(request, user)
             context['user'] = user
             return render_to_response('cfp.html', context)
         else:
-            context['form'] = form
+            context['invalid'] = True
+            context['form'] = UserLoginForm
             return render_to_response('user-login.html', context)
     else:
         form = UserLoginForm()
@@ -78,9 +80,27 @@ def home(request):
 
 
 def cfp(request):
-    context = RequestContext(request, {'request': request,
-                                       'user': request.user})
-    return render_to_response('cfp.html',
+    if request.method == "POST":
+        context = {}
+        context.update(csrf(request))
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            context['user'] = user
+            return render_to_response('cfp.html', context)
+        else:
+            context['invalid'] = True
+            context['form'] = UserLoginForm
+            return render_to_response('cfp.html', context)
+    else:
+        form = UserLoginForm()
+        context = RequestContext(request, {'request': request,
+                                           'user': request.user,
+                                           'form': form})
+        context.update(csrf(request))
+        return render_to_response('cfp.html',
                              context_instance=context)
 
 

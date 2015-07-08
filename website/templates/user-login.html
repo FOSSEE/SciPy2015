@@ -13,7 +13,7 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
            <li><a href="{% url 'website:home' %}">Home</a></li>
-           <li><a href="{% url 'website:userregister' %}">Sign Up</a></li>
+           <li><a href="{% url 'website:cfp' %}">Call for Papers</a></li>
         </ul>
       </div>
       <!--/.nav-collapse --> 
@@ -23,28 +23,37 @@
 {% endblock %}
 
 {% block content %}
-<div id="contact" name="contact">
+<div id="login" name="login">
     <div class="container">
-        <div class="row white">
-          {% if login_required %}
-            <div class="alert alert-success" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <p>Successfully Registered ! Kindly login to proceed.</p>
-            </div>
+        <div class="row">
+        <h2 class="centered">Login</h2>
+        <hr>
+          {% if invalid %}
+              <center>
+                <div class="alert" style="width:300px;height:50px;">
+                    <a class="close" data-dismiss="alert" href="#">&times;</a>
+                    <p>Invalid Username/Password</p>
+                </div>
+              </center>
+              <div class="clearfix"></div>
           {% endif %}
-          <h2 class="centered">Login</h2>
-          <hr>
           <div class="col-md-4">
           </div>
           <div class="col-md-4">
-            <form action="" method="POST">
-                {{ form.as_p }}
-                <button class="btn btn btn-primary" type="submit">Login</button>
-                <a href="{% url 'website:userregister' %}" class="btn btn btn-primary">Sign Up</a>
-                {% csrf_token %}
-            </form>
+                <p>Login with your SciPy India Account
+                <form action="" method="POST">
+                    {{ form.as_p }}
+                    <button class="btn btn btn-primary" type="submit">Login</button>
+                    <a href="{% url 'website:userregister' %}" class="btn btn btn-primary">Create an Account</a>
+                    {% csrf_token %}
+                </form>
+                <hr>
+                <center>
+                <p>OR</p>
+                <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}" class="btn btn-block btn-social btn-google"><i class="fa fa-google"></i> Sign in with Google</a>
+                <a href="{% url 'social:begin' 'github' %}?next={{ request.path }}" class="btn btn-block btn-social btn-github"><i class="fa fa-github"></i> Sign in with Github</a>
+                <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i> Sign in with Facebook</a>
+                </center>
           </div>
         </div>
     </div>

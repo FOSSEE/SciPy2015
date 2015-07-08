@@ -33,20 +33,22 @@
   <div class="container">
     <div class="row white">
       {% if proposal_submit %}
-        <div class="alert alert-success" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <p>Thank You for submitting a talk. Propsal has been saved successfully !</p>
-        </div>
+          <center>
+            <div class="alert" style="width:700px;height:50px;">
+                <a class="close" data-dismiss="alert" href="#">&times;</a>
+                <p>Thank You for submitting a talk. Propsal has been saved successfully !</p>
+            </div>
+          </center>
+          <div class="clearfix"></div>
       {% endif %}
       {% if login_required %}
-        <div class="alert alert-success" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <p>You need to login for submitting a talk !</p>
-        </div>
+          <center>
+            <div class="alert" style="width:400px;height:50px;">
+                <a class="close" data-dismiss="alert" href="#">&times;</a>
+                <p>Kindly Login/Register to submit a talk !</p>
+            </div>
+          </center>
+          <div class="clearfix"></div>
       {% endif %}
       <h2 class="centered">Call for Proposals</h2>
       <hr>
@@ -75,11 +77,31 @@
         {% if user and not user.is_anonymous %}
             <a href="{% url 'website:submitcfp' %}" class="btn btn btn-primary">Submit a Talk</a>
         {% else %}
-            To Submit a Talk Login with:
-            <p><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}" class="btn btn btn-primary">Google</a> or
-            <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="btn btn btn-primary">Facebook</a> or
-            <a href="{% url 'website:userlogin' %}" class="btn btn btn-primary">Login/SignUp</a>
+            <p>Login/Register to submit a talk
+            {% if invalid %}
+              <center>
+                <div class="alert" style="width:300px;height:45px;">
+                    <a class="close" data-dismiss="alert" href="#">&times;</a>
+                    <p>Invalid Username/Password</p>
+                </div>
+              </center>
+              <div class="clearfix"></div>
+          {% endif %}
+          <div class="col-md-8">
+            <form action="" method="POST">
+                {{ form.as_p }}
+                <button class="btn btn btn-primary" type="submit">Login</button>
+                <a href="{% url 'website:userregister' %}" class="btn btn btn-primary">Create an Account</a>
+                {% csrf_token %}
+            </form>
+          
+            <br>
+            <p>OR</p>
+            <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}" class="btn btn-block btn-social btn-google"><i class="fa fa-google"></i> Sign in with Google</a>
+            <a href="{% url 'social:begin' 'github' %}?next={{ request.path }}" class="btn btn-block btn-social btn-github"><i class="fa fa-github"></i> Sign in with Github</a>
+            <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i> Sign in with Facebook</a>
         {% endif %}
+          </div>
       </div>
     </div>
     <!-- row --> 

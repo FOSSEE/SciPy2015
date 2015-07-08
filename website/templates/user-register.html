@@ -13,7 +13,7 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
            <li><a href="{% url 'website:home' %}">Home</a></li>
-           <li><a href="{% url 'website:userlogin' %}">Login</a></li>
+           <li><a href="{% url 'website:cfp' %}">Call for Papers</a></li>
         </ul>
       </div>
       <!--/.nav-collapse --> 
@@ -25,7 +25,7 @@
 {% block content %}
 <div id="contact" name="contact">
     <div class="container">
-        <div class="row white">
+        <div class="row centered">
           <h2 class="centered">Sign Up</h2>
           <hr>
           <div class="col-md-4">
@@ -34,6 +34,7 @@
             <form action="" method="POST">
                 {{ form.as_p }}
                 <button class="btn btn btn-primary" type="submit">SignUp</button>
+                <a class="btn btn-primary" href="{% url 'website:cfp' %}">I have an account</a>
                 {% csrf_token %}
             </form>
           </div>

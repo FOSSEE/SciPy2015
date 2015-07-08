@@ -303,6 +303,13 @@ a:before, a:after {
 	text-align: center;
 }
 
+#login {
+	background: #fff;
+	padding: 60px 0;
+	text-align: center;
+}
+
+
 #contact .form {
 	padding: 30px 0;
 }
@@ -372,7 +379,6 @@ a:before, a:after {
 	padding: 25px 0 15px 0;
 	border-bottom: 1px solid #ddd;
 	text-align: center;
-	height: 15%;
 }
 #footerwrap span.copyright {
 	line-height: 40px;
@@ -407,9 +413,6 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 
 .white h1 {
 	color: #999;
-}
-.white p {
-	padding-top: 25px;
 }
 
 /* ==========================================================================
@@ -548,4 +551,17 @@ body .header {
 
 .row1 input {
     width: 350px;
+}
+
+.alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  background-color: #ffca39;
+  color: #3676ab;
+  border: 1px solid transparent;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 }
