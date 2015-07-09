@@ -375,7 +375,6 @@ a:before, a:after {
 	margin-right: 4px;
 }
 #footerwrap {
-	background: #2b2b2b;
 	padding: 25px 0 15px 0;
 	border-bottom: 1px solid #ddd;
 	text-align: center;
@@ -584,4 +583,15 @@ body .header {
     font-size: 15px;
     list-style-type: none;
     color: red;
+}
+
+.pwd-recovery-email {
+    height: 45px;
+    width: 350px;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.pwd-recovery-btn {
+    height:45px;
 }

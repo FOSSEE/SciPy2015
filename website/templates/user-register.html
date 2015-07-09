@@ -27,6 +27,18 @@
     <div class="container">
         <div class="row centered">
           <h2 class="centered">Sign Up</h2>
+          {% if email_registered %}
+          <center>
+            <div class="alert" style="width:300px;height:50px;">
+                <a class="close" data-dismiss="alert" href="#">&times;</a>
+                <p>Email ID is already registered !</p>
+            </div>
+            <p style="line-height:5px;">Have you already logged in using social logins ?</p>
+            <p style="line-height:5px;">or</p>
+            <p style="line-height:5px;"><a href="#">Click Here</a> if you forgot your username or password</p>
+          </center>
+          <div class="clearfix"></div>
+          {% endif %}
           <hr>
           <div class="col-md-3">
           </div>

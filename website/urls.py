@@ -7,4 +7,6 @@ urlpatterns = patterns('',
     url(r'^submit-cfp/$', 'website.views.submitcfp', name='submitcfp'),
     url(r'^accounts/register/$', 'website.views.userregister', name='userregister'),
     url(r'^accounts/login/$', 'website.views.userlogin', name='userlogin'),
+    url(r'^accounts/forgot-password/$', 'website.views.forgotpassword', name='forgotpassword'),
+    url(r'^accounts/update-password/$', 'website.views.updatepassword', name='updatepassword'),
 )
