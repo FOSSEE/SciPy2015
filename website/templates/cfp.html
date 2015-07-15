@@ -103,6 +103,9 @@
             <hr>
             {% if user and not user.is_anonymous %}
                 <a href="{% url 'website:submitcfp' %}" class="btn btn btn-primary">Submit a Talk</a>
+                <br><br>
+                <p align="justify">
+                If you are interested in taking an hands on tutorial/workshop session kindly write to us at <b>scipy[at]fossee[dot]in</b> with the topic you are interested to take along with a brief bio about yourself. Kindly note that the topic should be related to scientific computing.</p>
             {% else %}
                 <p>Login/Register to submit a talk
                 {% if invalid %}
