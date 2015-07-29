@@ -66,6 +66,7 @@ AUTHENTICATION_BACKENDS = (
    'social.backends.facebook.FacebookOAuth2',
    'social.backends.google.GoogleOAuth2',
    'social.backends.twitter.TwitterOAuth',
+   'social.backends.github.GithubOAuth2',
    'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -106,6 +107,9 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = LOCAL_SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
 SOCIAL_AUTH_FACEBOOK_KEY = LOCAL_SOCIAL_AUTH_FB_KEY
 SOCIAL_AUTH_FACEBOOK_SECRET = LOCAL_SOCIAL_AUTH_FB_SECRET
 
+SOCIAL_AUTH_GITHUB_KEY = LOCAL_SOCIAL_AUTH_GITHUB_KEY
+SOCIAL_AUTH_GITHUB_SECRET = LOCAL_SOCIAL_AUTH_GITHUB_SECRET
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -126,3 +130,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, '../website/static/uploads')
+
+LOGIN_REDIRECT_URL = '/cfp'

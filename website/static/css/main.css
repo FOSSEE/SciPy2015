@@ -595,3 +595,21 @@ body .header {
 .pwd-recovery-btn {
     height:45px;
 }
+
+#sponsors {
+	background: #fff;
+	padding: 60px 0;
+}
+#sponsors .col-md-4 {
+	margin-left: 10%;
+	margin-top: 2.5%;
+	width: 20%;
+}
+
+#sponsors a {
+    text-decoration: underline;
+}
+
+#about img {
+    margin-top: 10%;
+}
