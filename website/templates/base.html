@@ -43,7 +43,7 @@
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand smoothScroll" href="#home">SciPy India 2015 </a>
+        <a class="navbar-brand smoothScroll" href="#home"><b>SciPy India 2015</b> </a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -52,7 +52,9 @@
           <li> <a href="#speakers" class="smoothScroll">Speakers</a></li>
           <li> <a href="#attend" class="smoothScroll">Attend</a></li>
           <li> <a href="{% url 'website:cfp' %}">Call for Papers</a></li>
+	  <li> <a href="#schedule" class="smoothScroll">Schedule</a></li>
           <li> <a href="#venue" class="smoothScroll">Venue</a></li>
+	  <li> <a href="#poster" class="smoothScroll">  Poster</a></li>
           <li> <a href="#sponsors" class="smoothScroll">Sponsors</a></li>
           <li> <a href="#contact" class="smoothScroll">Contact</a></li>
         </ul>
@@ -88,7 +90,8 @@
    <hr>
     <h3 >DECEMBER 14, 15 & 16</h3></br>
     <h4>CFP for the conference is now open ! <a href="{% url 'website:cfp' %}" class="btn btn btn-primary">Click Me</a> for more details.</h4>
-    <h4>Registrations are now open ! <a href="#attend" class="smoothScroll btn btn btn-primary">Grab a Ticket</a> </h4>
+    <h4>Registrations are now open ! <a href="#attend" class="smoothScroll btn btn btn-primary">Grab a Ticket</a> </h4>   
+ 	<h4>The last date for Early Bird Registration and Lite Registration is <b style="color:red"> 14 Nov 2015</b>.</h4>  
   </header>
 </div>
 <!-- /headerwrap --> 
@@ -97,7 +100,7 @@
 <div id="about" name="about">
   <div class="container">
     <div class="row white">
-      <h2 class="centered">ABOUT</h2>
+      <h2 class="centered">About</h2>
       <hr>
       <div class="col-md-6">
         <h3>Python for Scientific Computing</h3>
@@ -145,7 +148,7 @@
 <div id="speakers" name="speakers">
   <div class="container">
     <div class="row centered">
-      <h2 class="centered">SPEAKERS</h2>
+      <h2 class="centered">Speakers</h2>
       <hr>
       <div class="col-lg-3 centered" style="margin-left:15%">
         <img src="{% static 'img/andreas-circle.png' %}" class="img img-circle" alt=""></img>
@@ -155,7 +158,7 @@
         <a href="http://mathema.tician.de/" target="_blank"><img width=30 height=30 src="{% static 'img/internet.png' %}"></img></a>
       </div>
       <div class="col-lg-3 centered">
-        <img src="{% static 'img/jarrod-circle.png' %}" class="img img-circle" alt=""></img>
+        <img src="{% static 'img/j.png' %}" class="img img-circle" alt=""></img>
         <h4><a href="http://www.jarrodmillman.com/" target="_blank"><strong>Jarrod Millman</strong></a></h4>
         <p></p>
         <a href="https://github.com/jarrodmillman" target="_blank"><img width=30 height=30 src="{% static 'img/github.png' %}"></img></a>
@@ -180,17 +183,49 @@
       <center><u><h4>Registration Details</h4></u></center>
       <div style="width:80%;margin-left:10% ">
       <div class="col-md-12" >
-        <p align="justify"><b>Early Bird Registration - Rs 1000:</b> This ticket includes conference (tutorials + talks), lunch and snacks for 3 days. It does not include Accommodation & T-Shirt.</p>
+        <p align="justify"><b>Early Bird Registration<b style="color:red">(till 14 Nov 2015)</b> - Rs 1000:</b> This ticket includes conference (tutorials + talks), lunch and snacks for 3 days. It does not include Accommodation & T-Shirt. This is a non-refundable ticket.</p>
       </div>
       <center><div class="col-md-12">
-        <p align="justify"><b>Lite Registration - Rs 300:</b> This Ticket allows you to ONLY attend the conference for 3 Days. Does not include any conference amenities. (Accommodation, Kit, Food & T-shirt)</p>
-      </div></center>
-      <div class="col-md-12">
-        <p align="justify"><b>On Spot Registration - Rs 2000:</b> This ticket includes conference (tutorials + talks), lunch and snacks for 3 days. It does not include Accommodation & T-Shirt.</p>
+        <p align="justify"><b>Lite Registration<b style="color:red"> (till 14 Nov 2015)</b> - Rs 300:</b> This Ticket allows you to ONLY attend the conference for 3 Days. Does not include any conference amenities (Accommodation, Kit, Food & T-shirt). This is a non-refundable ticket. </p>
+      </div></center>   
+ <div class="col-md-12" >
+<p align="justify"><b>Regular Registration<b style="color:red"> (15 Nov 2015 - 10 Dec 2015)</b> - Rs 1200:</b> This ticket includes conference (tutorials + talks), lunch and snacks for 3 days. It does not include Accommodation & T-Shirt. This is a non-refundable ticket.</p>
       </div>
-      <center><a href="http://scipyindia2015.doattend.com/" class="btn btn-info" role="button">Buy Tickets</a></center>
+	
+      <div class="col-md-12">
+        <p align="justify"><b>On Spot Registration - Rs 2000:</b> This ticket includes conference (tutorials + talks), lunch and snacks for 3 days. It does not include Accommodation & T-Shirt. This is a non-refundable ticket. </p>
+      </div>
+	    <center><u><h4>Add On Details</h4></u></center>
+      <div style="width:100%; ">
+      <div class="col-md-12" >
+        <p align="justify"><b>Accommodation - Rs 750:</b> Accommodation is provided on a shared basis (twin sharing) inside IIT-B campus (Boys/Girls hostel).
+Accommodation will be provided for 3 days, i.e, 13-14, 14-15 and 15-16 December.
+Accommodation does not include other amenities like dinner, etc.
+Extension of period of stay is not available.
+This is a non-refundable ticket. </p>
+      </div>
+      <center><div class="col-md-12">
+        <p align="justify"><b>T- Shirts - Rs 250: </b>Change of size, exchange at the venue is not available.
+This is a non-refundable ticket. </p>
+      </div>
+ </center>
+<p>NOTE: Add-ons can be purchased during the time of registration. However, if you have already booked your tickets and want to buy an add-on, please <a href="https://scipyindia2015.doattend.com/get_addons" class="btn btn-info" role="button" target="_blank">Click here</a> </p>
+
+      <center><a href="http://scipyindia2015.doattend.com/" target="_blank" class="btn btn-info" role="button">Buy Tickets</a></center>
       </div>
    </div>
+  </div>
+</div>
+
+<div id="schedule" name="schedule">
+  <div class="container">
+    <div class="row">
+      <h2 class="centered">Schedule</h2>
+      <hr>
+      <div class="col-lg-8 col-lg-offset-2 centered">
+       <center><h3>Will be updated soon..</h3></center>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -198,7 +233,7 @@
 <div id="venue" name="venue">
   <div class="container">
     <div class="row">
-      <h2 class="centered">VENUE</h2>
+      <h2 class="centered">Venue</h2>
       <hr>
       <div class="col-lg-8 col-lg-offset-2 centered">
        <center><h3>Lecture Hall Complex, IIT Bombay</h3></center>
@@ -223,6 +258,19 @@
     </div>
   </div>
 </div-->
+<div id="poster" name="poster">
+  <div class="container">
+    <div class="row">
+      <h2 class="centered">Poster</h2>
+      <hr>
+      <div class="col-lg-8 col-lg-offset-2 centered">
+ <a href="http://fossee.in/data/emails/images/scipy_poster_2015.pdf" target="_blank">   <img src="http://fossee.in/data/emails/images/Poster_thumbnail.png" /></a>
+        <p>We request you to share the event details through this poster with faculty members, students and others who might be interested. You may print the poster (native size - A4) and display on the notice boards.</p>
+<a href="http://fossee.in/data/emails/images/scipy_poster_2015.pdf"  class="btn btn-info" role="button" target="_blank">View Poster</a> 
+      </div>
+    </div>
+  </div>
+</div>
 
 <div id="sponsors" name="sponsors">
   <div class="container">
@@ -244,7 +292,7 @@
         <p align="justify">The Annual SciPy India conference is organised by the team members of FOSSEE project which is part of the National Mission on Education through ICT with the thrust area being Adaptation and deployment of open source simulation packages equivalent to proprietary software, funded by MHRD, based at the Indian Institute of Technology Bombay (IITB).</p>
       </div>
       <hr>
-      <center><h4>We are open for sponsorships. Kindly write to us at <u>scipy[at]fossee[dot]in</u> for details.</h4></center>
+      <center><h4>We are open for sponsorships.You can view the sponshorship details <a href="http://fossee.in/data/SciPy2015-Sponsorship.pdf" target="_blank">here </h4></a></center>
    </div>
   </div>
 </div>
@@ -278,7 +326,7 @@
 <div id="contact" name="contact">
   <div class="container">
     <div class="row">
-      <h2 class="centered">CONTACT US</h2>
+      <h2 class="centered">Contact Us</h2>
       <hr>
       <div class="col-md-4 centered">
         <p></p>
