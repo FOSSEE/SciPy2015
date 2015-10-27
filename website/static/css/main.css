@@ -613,4 +613,12 @@ body .header {
 
 #about img {
     margin-top: 10%;
+} 
+
+.errorlist
+{
+font-size:14px;
+color:red;
+text-align:center;
+ list-style-type: none;
 }

@@ -9,6 +9,10 @@ from website.models import Proposal
 
 
 class ProposalForm(forms.ModelForm):
+    content_link = forms.CharField(required=False, help_text='Link to the content of your Talk')
+    speaker_link = forms.CharField(required=False, help_text='Link to information about the Speaker')
+    attachment = forms.FileField(required=False)
+
     class Meta:
         model = Proposal
         exclude = ('user', )

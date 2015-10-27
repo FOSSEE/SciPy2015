@@ -36,7 +36,7 @@
           <center>
             <div class="alert" style="width:700px;height:50px;">
                 <a class="close" data-dismiss="alert" href="#">&times;</a>
-                <p>Thank You for submitting a talk. Propsal has been saved successfully !</p>
+                <p>Thank You for submitting a talk. Proposal has been saved successfully !</p>
             </div>
           </center>
           <div class="clearfix"></div>
@@ -84,7 +84,6 @@
             <hr>
             <h3><u>Proposal Guidelines</u></h3>
             <ul>
-                <li>Submit a proposal through <a href="#">this link</a>
                 <li>The project you are willing to present should be an actual implementation rather than just an idea.
                 <li>Abstract should be of 300 to 700 words describing the topic, including its relevance to scientific computing.
                 <li>Proposals with an aim to promote a commercial product or service will be rejected.
@@ -97,17 +96,17 @@
             <h3><u>Important Dates</u></h3>
             <ul>
                 <li>CFP Open: July 5, 2015
-                <li>CFP Close: October 15, 2015
-                <li>Announcement of selected proposals: November 15, 2015
+                <li>CFP Close: November 24, 2015
+                <li>Announcement of selected proposals: December 1, 2015
             </ul>
             <hr>
             {% if user and not user.is_anonymous %}
                 <a href="{% url 'website:submitcfp' %}" class="btn btn btn-primary">Submit a Talk</a>
                 <br><br>
                 <p align="justify">
-                If you are interested in taking an hands on tutorial/workshop session kindly write to us at <b>scipy[at]fossee[dot]in</b> with the topic you are interested to take along with a brief bio about yourself. Kindly note that the topic should be related to scientific computing.</p>
+                If you are interested in taking a hands on tutorial/workshop session, kindly write to us at <b>scipy[at]fossee[dot]in</b> with the topic you are interested to take along with a brief bio about yourself. Kindly note that the topic should be related to scientific computing.</p>
             {% else %}
-                <p>Login/Register to submit a talk
+                <p><h4>Login/Register to Submit a Proposal</h4>
                 {% if invalid %}
                   <center>
                     <div class="alert" style="width:300px;height:45px;">
